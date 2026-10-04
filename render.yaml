@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: vidhur-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    envVars:
+      - key: ALLOWED_ORIGINS
+        sync: false   # Render asks you for this value when you create the service

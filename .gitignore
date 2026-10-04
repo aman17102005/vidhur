@@ -1,0 +1,27 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# python
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# node / build output
+node_modules/
+dist/
+.vercel/
+.netlify/
+
+# temp, logs, test screenshots, OS/editor files
+tmp/
+*.tmp
+*.log
+*.swp
+.DS_Store
+.idea/
+.vscode/
