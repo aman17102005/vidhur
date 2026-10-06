@@ -3,9 +3,12 @@ import re
 from typing import List
 
 from ..models import AnalysisResult, Finding, MAX_CONTENT_CHARS
+from .consequences import build_consequences
 from .domains import FREE_MAIL, check_email_domain, check_mismatch, check_url
 from .extract import extract_entities
+from .lang import detect_language
 from .patterns import run_phrase_rules
+from .playbooks import match_playbook
 
 _SEV_ORDER = {"high": 0, "medium": 1, "low": 2}
 _ACTION_ORDER = ["share_info", "remote", "bad_app", "qr_pay", "upi_confirm", "pay_fee", "bad_link", "verify"]
@@ -93,9 +96,13 @@ def analyze(content: str) -> AnalysisResult:
 
     findings = _dedupe_and_sort(findings)
     verdict = _verdict(findings)
+    lang = detect_language(text)
     return AnalysisResult(
         verdict=verdict,
         findings=findings,
         next_step=_next_step(findings, verdict),
         report_hint=REPORT_HINT if verdict == "high_risk" else None,
+        language=lang,
+        consequences=build_consequences(findings, verdict, lang),
+        playbook=match_playbook(findings, text, verdict, lang),
     )

@@ -1,0 +1,586 @@
+{
+ "_comment": "A playbook matches when at least PLAYBOOK_MIN_MATCHES of its finding_ids fire (constant in app/rules/playbooks.py). Ties are broken by boost_terms found in the message. Do not name real companies or people as scammers.",
+ "playbooks": [
+  {
+   "id": "fake_internship",
+   "name": {
+    "en": "Fake internship / pay-to-join",
+    "hi": "फ़र्ज़ी इंटर्नशिप / जुड़ने के लिए पैसे",
+    "hinglish": "Fake internship / join karne ke liye paise"
+   },
+   "finding_ids": [
+    "fee_for_opportunity",
+    "no_interview_selected",
+    "easy_earning",
+    "freemail_company",
+    "selected_unprompted",
+    "move_to_chat",
+    "form_collect"
+   ],
+   "boost_terms": [
+    "internship",
+    "stipend",
+    "offer letter",
+    "certificate",
+    "intern"
+   ],
+   "how_it_works": {
+    "en": [
+     "You get a message saying you are 'selected' for an internship, often without any interview.",
+     "They create excitement and a deadline to confirm your seat.",
+     "Then they ask for a 'registration', 'kit' or 'security' fee, promising a refund."
+    ],
+    "hi": [
+     "आपको मैसेज आता है कि आप इंटर्नशिप के लिए 'चुने गए' हैं, अक्सर बिना इंटरव्यू के।",
+     "वे उत्साह और जल्दी का दबाव बनाते हैं कि सीट पक्की करो।",
+     "फिर 'रजिस्ट्रेशन', 'किट' या 'सिक्योरिटी' फ़ीस माँगते हैं और रिफ़ंड का वादा करते हैं।"
+    ],
+    "hinglish": [
+     "Aapko message aata hai ki aap internship ke liye 'select' ho gaye hain, aksar bina interview ke.",
+     "Woh excitement aur jaldi ka pressure banate hain ki seat confirm karo.",
+     "Phir 'registration', 'kit' ya 'security' fees maangte hain aur refund ka wada karte hain."
+    ]
+   },
+   "what_next": {
+    "en": [
+     "A payment link or UPI ID for the 'fee'.",
+     "Your Aadhaar, PAN or bank details for 'onboarding'.",
+     "A second payment for 'certificate' or 'laptop' charges."
+    ],
+    "hi": [
+     "'फ़ीस' के लिए पेमेंट लिंक या UPI ID।",
+     "'ऑनबोर्डिंग' के नाम पर आधार, PAN या बैंक की जानकारी।",
+     "'सर्टिफ़िकेट' या 'लैपटॉप' के नाम पर दूसरा पेमेंट।"
+    ],
+    "hinglish": [
+     "'Fees' ke liye payment link ya UPI ID.",
+     "'Onboarding' ke naam par Aadhaar, PAN ya bank details.",
+     "'Certificate' ya 'laptop' ke naam par doosra payment."
+    ]
+   },
+   "real_looks_like": {
+    "en": [
+     "Real internships do not charge you to join. They use the company's own email and an interview or test.",
+     "Check the listing on the company's official careers page or your college placement cell."
+    ],
+    "hi": [
+     "असली इंटर्नशिप में जुड़ने के लिए पैसे नहीं लगते। वे कंपनी के अपने ईमेल और इंटरव्यू या टेस्ट से होती हैं।",
+     "कंपनी के आधिकारिक करियर पेज या अपने कॉलेज के प्लेसमेंट सेल पर ऑफ़र जाँचें।"
+    ],
+    "hinglish": [
+     "Asli internship mein join karne ke liye paise nahi lagte. Woh company ke apne email aur interview ya test se hoti hain.",
+     "Offer ko company ke official careers page ya apne college ke placement cell par check karein."
+    ]
+   }
+  },
+  {
+   "id": "fake_scholarship",
+   "name": {
+    "en": "Fake scholarship fee",
+    "hi": "फ़र्ज़ी स्कॉलरशिप फ़ीस",
+    "hinglish": "Fake scholarship fees"
+   },
+   "finding_ids": [
+    "fee_for_opportunity",
+    "pay_to_unlock",
+    "fake_gov",
+    "prize_bait",
+    "selected_unprompted",
+    "form_collect",
+    "ask_id_docs"
+   ],
+   "boost_terms": [
+    "scholarship",
+    "nsp",
+    "ugc",
+    "aicte",
+    "student"
+   ],
+   "how_it_works": {
+    "en": [
+     "A message says your scholarship is approved, often copying a government-sounding name.",
+     "It says the money is ready but needs a 'processing' or 'verification' step.",
+     "You are asked to pay a small fee or enter bank details to 'release' it."
+    ],
+    "hi": [
+     "मैसेज कहता है कि आपकी स्कॉलरशिप मंज़ूर हो गई है, अक्सर सरकारी जैसा नाम लेकर।",
+     "कहा जाता है कि पैसा तैयार है, बस 'प्रोसेसिंग' या 'वेरिफ़िकेशन' बाकी है।",
+     "पैसा 'रिलीज़' करने के लिए छोटी फ़ीस या बैंक की जानकारी माँगी जाती है।"
+    ],
+    "hinglish": [
+     "Message kehta hai ki aapki scholarship approve ho gayi hai, aksar sarkari jaisa naam lekar.",
+     "Kaha jaata hai ki paisa ready hai, bas 'processing' ya 'verification' baaki hai.",
+     "Paisa 'release' karne ke liye chhoti fees ya bank details maangi jaati hain."
+    ]
+   },
+   "what_next": {
+    "en": [
+     "A small 'processing fee' by UPI.",
+     "Your bank account number, card details or OTP to 'credit' the money.",
+     "More fees when the first one is paid."
+    ],
+    "hi": [
+     "UPI से छोटी 'प्रोसेसिंग फ़ीस'।",
+     "पैसा 'क्रेडिट' करने के लिए बैंक खाता नंबर, कार्ड की जानकारी या OTP।",
+     "पहली फ़ीस देने के बाद और फ़ीस।"
+    ],
+    "hinglish": [
+     "UPI se chhoti 'processing fees'.",
+     "Paisa 'credit' karne ke liye bank account number, card details ya OTP.",
+     "Pehli fees dene ke baad aur fees."
+    ]
+   },
+   "real_looks_like": {
+    "en": [
+     "Real scholarships never ask you to pay to receive money. Money is sent to your account without any payment from you.",
+     "Apply and check status only on the official portal or through your college scholarship office."
+    ],
+    "hi": [
+     "असली स्कॉलरशिप पाने के लिए कभी पैसे नहीं देने पड़ते। पैसा बिना आपके कुछ दिए खाते में आता है।",
+     "आवेदन और स्टेटस सिर्फ़ आधिकारिक पोर्टल या अपने कॉलेज के स्कॉलरशिप ऑफ़िस से देखें।"
+    ],
+    "hinglish": [
+     "Asli scholarship paane ke liye kabhi paise nahi dene padte. Paisa bina aapke kuch diye account mein aata hai.",
+     "Apply aur status sirf official portal ya apne college ke scholarship office se dekhein."
+    ]
+   }
+  },
+  {
+   "id": "kyc_block",
+   "name": {
+    "en": "KYC / account-block scam",
+    "hi": "KYC / खाता बंद होने का स्कैम",
+    "hinglish": "KYC / account block scam"
+   },
+   "finding_ids": [
+    "kyc_update",
+    "account_threat",
+    "dev_kyc",
+    "dev_account_threat",
+    "ask_otp",
+    "dev_otp",
+    "lookalike_domain",
+    "apk_install",
+    "shortener",
+    "ask_bank_details",
+    "ask_pin"
+   ],
+   "boost_terms": [
+    "kyc",
+    "bank",
+    "account",
+    "sbi",
+    "hdfc",
+    "icici",
+    "paytm"
+   ],
+   "how_it_works": {
+    "en": [
+     "A message claims to be from your bank and says your KYC has expired or your account will be blocked.",
+     "It adds a deadline and a link or phone number to 'fix' it.",
+     "The link is a fake bank page, or the caller 'helps' you over the phone."
+    ],
+    "hi": [
+     "मैसेज खुद को आपके बैंक का बताता है और कहता है कि KYC एक्सपायर हो गई या खाता बंद हो जाएगा।",
+     "साथ में समय-सीमा और 'ठीक करने' के लिए लिंक या फ़ोन नंबर होता है।",
+     "लिंक नकली बैंक पेज होता है, या कॉल करने वाला फ़ोन पर 'मदद' करता है।"
+    ],
+    "hinglish": [
+     "Message khud ko aapke bank ka batata hai aur kehta hai ki KYC expire ho gayi ya account block ho jayega.",
+     "Saath mein deadline aur 'theek karne' ke liye link ya phone number hota hai.",
+     "Link nakli bank page hota hai, ya call karne wala phone par 'madad' karta hai."
+    ]
+   },
+   "what_next": {
+    "en": [
+     "Your login ID, password, card number and CVV on the fake page.",
+     "The OTP that arrives on your phone.",
+     "An app to install, which can read your messages."
+    ],
+    "hi": [
+     "नकली पेज पर लॉगिन ID, पासवर्ड, कार्ड नंबर और CVV।",
+     "आपके फ़ोन पर आने वाला OTP।",
+     "इंस्टॉल करने के लिए एक ऐप, जो आपके मैसेज पढ़ सकता है।"
+    ],
+    "hinglish": [
+     "Nakli page par login ID, password, card number aur CVV.",
+     "Aapke phone par aane wala OTP.",
+     "Install karne ke liye ek app, jo aapke messages padh sakta hai."
+    ]
+   },
+   "real_looks_like": {
+    "en": [
+     "Banks do not block accounts over a text message or ask for KYC through links or calls.",
+     "If KYC is really due, visit your branch or use the bank's official app."
+    ],
+    "hi": [
+     "बैंक किसी टेक्स्ट मैसेज पर खाता बंद नहीं करते और लिंक या कॉल से KYC नहीं माँगते।",
+     "अगर KYC सच में बाकी है, तो अपनी ब्रांच जाएँ या बैंक का आधिकारिक ऐप इस्तेमाल करें।"
+    ],
+    "hinglish": [
+     "Bank kisi text message par account block nahi karte aur link ya call se KYC nahi maangte.",
+     "Agar KYC sach mein baaki hai, to apni branch jaayein ya bank ka official app use karein."
+    ]
+   }
+  },
+  {
+   "id": "upi_collect",
+   "name": {
+    "en": "UPI collect request / reverse QR",
+    "hi": "UPI कलेक्ट रिक्वेस्ट / उल्टा QR",
+    "hinglish": "UPI collect request / ulta QR"
+   },
+   "finding_ids": [
+    "pay_to_receive",
+    "collect_request",
+    "upi_pay_qr",
+    "ask_pin",
+    "remote_access"
+   ],
+   "boost_terms": [
+    "upi",
+    "qr",
+    "refund",
+    "cashback",
+    "receive",
+    "scan"
+   ],
+   "how_it_works": {
+    "en": [
+     "Someone says they will send you money, for example a refund, a deposit or payment for something you sell.",
+     "They send a QR code or a 'request' and tell you to scan or approve it to receive the money.",
+     "When you enter your PIN, the money goes out of your account instead."
+    ],
+    "hi": [
+     "कोई कहता है कि वह आपको पैसे भेजेगा, जैसे रिफ़ंड, डिपॉज़िट या आपकी बेची चीज़ का पेमेंट।",
+     "वह QR कोड या 'रिक्वेस्ट' भेजकर कहता है कि पैसे पाने के लिए स्कैन या मंज़ूर करें।",
+     "जब आप PIN डालते हैं, तो पैसे आपके खाते से निकल जाते हैं।"
+    ],
+    "hinglish": [
+     "Koi kehta hai ki woh aapko paise bhejega, jaise refund, deposit ya aapki bechi cheez ka payment.",
+     "Woh QR code ya 'request' bhejkar kehta hai ki paise paane ke liye scan ya approve karein.",
+     "Jab aap PIN daalte hain, to paise aapke account se nikal jaate hain."
+    ]
+   },
+   "what_next": {
+    "en": [
+     "Your UPI PIN, 'to complete the receiving'.",
+     "Another request or a bigger amount when the first works.",
+     "A screen-share app to 'help' you."
+    ],
+    "hi": [
+     "'पैसे पाने की प्रक्रिया पूरी करने' के नाम पर आपका UPI PIN।",
+     "पहली बार सफल होने पर दूसरी रिक्वेस्ट या बड़ी रकम।",
+     "'मदद' के नाम पर स्क्रीन-शेयर ऐप।"
+    ],
+    "hinglish": [
+     "'Paise paane ki process poori karne' ke naam par aapka UPI PIN.",
+     "Pehli baar safal hone par doosri request ya badi rakam.",
+     "'Madad' ke naam par screen-share app."
+    ]
+   },
+   "real_looks_like": {
+    "en": [
+     "To receive money, you do nothing: no scan, no PIN, no approval.",
+     "A PIN or approval is only for sending money."
+    ],
+    "hi": [
+     "पैसे पाने के लिए आपको कुछ नहीं करना पड़ता: न स्कैन, न PIN, न मंज़ूरी।",
+     "PIN या मंज़ूरी सिर्फ़ पैसे भेजने के लिए होती है।"
+    ],
+    "hinglish": [
+     "Paise paane ke liye aapko kuch nahi karna padta: na scan, na PIN, na approval.",
+     "PIN ya approval sirf paise bhejne ke liye hoti hai."
+    ]
+   }
+  },
+  {
+   "id": "fake_job_task",
+   "name": {
+    "en": "Fake job / task scam",
+    "hi": "फ़र्ज़ी नौकरी / टास्क स्कैम",
+    "hinglish": "Fake job / task scam"
+   },
+   "finding_ids": [
+    "easy_earning",
+    "task_scam",
+    "no_interview_selected",
+    "move_to_chat",
+    "fee_for_opportunity",
+    "guaranteed_returns"
+   ],
+   "boost_terms": [
+    "work from home",
+    "part time",
+    "task",
+    "telegram",
+    "earn",
+    "commission"
+   ],
+   "how_it_works": {
+    "en": [
+     "A message offers easy work from home, such as liking videos or rating places, with daily pay.",
+     "You are added to a Telegram or WhatsApp group and paid a small amount for the first tasks.",
+     "Then you are told to deposit money to get 'higher-paying' tasks, and the money cannot be withdrawn."
+    ],
+    "hi": [
+     "मैसेज घर बैठे आसान काम का ऑफ़र देता है, जैसे वीडियो लाइक करना या जगहों को रेट करना, रोज़ की कमाई के साथ।",
+     "आपको Telegram या WhatsApp ग्रुप में जोड़ा जाता है और पहले कुछ टास्क पर थोड़ा पैसा दिया जाता है।",
+     "फिर 'ज़्यादा कमाई वाले' टास्क के लिए पैसे जमा करने को कहा जाता है, और वह पैसा निकल नहीं पाता।"
+    ],
+    "hinglish": [
+     "Message ghar baithe aasan kaam ka offer deta hai, jaise videos like karna ya places rate karna, daily kamai ke saath.",
+     "Aapko Telegram ya WhatsApp group mein joda jaata hai aur pehle kuch tasks par thoda paisa diya jaata hai.",
+     "Phir 'zyada kamai wale' tasks ke liye paise jama karne ko kaha jaata hai, aur woh paisa nikal nahi paata."
+    ]
+   },
+   "what_next": {
+    "en": [
+     "A 'deposit' or 'prepaid task' payment.",
+     "Bigger and bigger amounts to 'unlock' your earnings.",
+     "Your bank details to 'send your salary'."
+    ],
+    "hi": [
+     "'डिपॉज़िट' या 'प्रीपेड टास्क' का पेमेंट।",
+     "आपकी कमाई 'अनलॉक' करने के लिए बढ़ती हुई रकम।",
+     "'सैलरी भेजने' के लिए बैंक की जानकारी।"
+    ],
+    "hinglish": [
+     "'Deposit' ya 'prepaid task' ka payment.",
+     "Aapki kamai 'unlock' karne ke liye badhti hui rakam.",
+     "'Salary bhejne' ke liye bank details."
+    ]
+   },
+   "real_looks_like": {
+    "en": [
+     "Real employers pay you. You never pay them to start working.",
+     "They hire through interviews and official company emails, not chat-group tasks."
+    ],
+    "hi": [
+     "असली नियोक्ता आपको पैसे देते हैं। काम शुरू करने के लिए आप उन्हें पैसे नहीं देते।",
+     "वे इंटरव्यू और कंपनी के आधिकारिक ईमेल से भर्ती करते हैं, चैट-ग्रुप के टास्क से नहीं।"
+    ],
+    "hinglish": [
+     "Asli employer aapko paise dete hain. Kaam shuru karne ke liye aap unhe paise nahi dete.",
+     "Woh interview aur company ke official email se hire karte hain, chat-group ke tasks se nahi."
+    ]
+   }
+  },
+  {
+   "id": "parcel",
+   "name": {
+    "en": "Courier / parcel scam",
+    "hi": "कूरियर / पार्सल स्कैम",
+    "hinglish": "Courier / parcel scam"
+   },
+   "finding_ids": [
+    "parcel_scam",
+    "shortener",
+    "lookalike_domain",
+    "url_bait_words",
+    "urgency",
+    "pay_to_unlock",
+    "ask_bank_details"
+   ],
+   "boost_terms": [
+    "parcel",
+    "courier",
+    "delivery",
+    "customs",
+    "package"
+   ],
+   "how_it_works": {
+    "en": [
+     "A message says a parcel is held, a delivery failed or your address is incomplete.",
+     "It asks for a small fee or a quick address update through a link.",
+     "The link is a fake page that collects your card details or OTP."
+    ],
+    "hi": [
+     "मैसेज कहता है कि पार्सल रुका है, डिलीवरी फ़ेल हुई या आपका पता अधूरा है।",
+     "वह लिंक के ज़रिए छोटी फ़ीस या पता अपडेट करने को कहता है।",
+     "लिंक नकली पेज होता है जो आपके कार्ड की जानकारी या OTP ले लेता है।"
+    ],
+    "hinglish": [
+     "Message kehta hai ki parcel ruka hai, delivery fail hui ya aapka address adhoora hai.",
+     "Woh link ke zariye chhoti fees ya address update karne ko kehta hai.",
+     "Link nakli page hota hai jo aapke card ki details ya OTP le leta hai."
+    ]
+   },
+   "what_next": {
+    "en": [
+     "A small 'redelivery' or 'customs' fee.",
+     "Your card number, CVV and OTP to pay it.",
+     "A call-back number, where another scammer asks for more."
+    ],
+    "hi": [
+     "छोटी 'रीडिलीवरी' या 'कस्टम्स' फ़ीस।",
+     "फ़ीस देने के लिए कार्ड नंबर, CVV और OTP।",
+     "कॉल-बैक नंबर, जहाँ दूसरा ठग और माँगता है।"
+    ],
+    "hinglish": [
+     "Chhoti 'redelivery' ya 'customs' fees.",
+     "Fees dene ke liye card number, CVV aur OTP.",
+     "Call-back number, jahan doosra thug aur maangta hai."
+    ]
+   },
+   "real_looks_like": {
+    "en": [
+     "Real couriers send tracking links on their own official sites and rarely ask for card details by message.",
+     "If you are not expecting a parcel, ignore the message. Check with the sender or the courier app you installed yourself."
+    ],
+    "hi": [
+     "असली कूरियर कंपनियाँ अपनी आधिकारिक साइट पर ट्रैकिंग देती हैं और मैसेज में कार्ड की जानकारी नहीं माँगतीं।",
+     "अगर आप पार्सल का इंतज़ार नहीं कर रहे, तो मैसेज अनदेखा करें। भेजने वाले या अपने इंस्टॉल किए कूरियर ऐप से जाँचें।"
+    ],
+    "hinglish": [
+     "Asli courier companies apni official site par tracking deti hain aur message mein card details nahi maangti.",
+     "Agar aap parcel ka intezaar nahi kar rahe, to message ignore karein. Bhejne wale ya apne install kiye courier app se check karein."
+    ]
+   }
+  },
+  {
+   "id": "lottery_reward",
+   "name": {
+    "en": "Lottery / reward scam",
+    "hi": "लॉटरी / इनाम स्कैम",
+    "hinglish": "Lottery / reward scam"
+   },
+   "finding_ids": [
+    "prize_bait",
+    "pay_to_unlock",
+    "ask_bank_details",
+    "ask_id_docs",
+    "shortener",
+    "lookalike_domain"
+   ],
+   "boost_terms": [
+    "lottery",
+    "lucky draw",
+    "won",
+    "winner",
+    "prize",
+    "gift"
+   ],
+   "how_it_works": {
+    "en": [
+     "A message says you won a lottery, lucky draw or gift, even though you never entered.",
+     "It says the prize is ready but a 'tax', 'delivery' or 'processing' fee must be paid first.",
+     "After you pay, new fees keep appearing and the prize never arrives."
+    ],
+    "hi": [
+     "मैसेज कहता है कि आपने लॉटरी, लकी ड्रॉ या गिफ़्ट जीता है, जबकि आपने कभी भाग नहीं लिया।",
+     "कहा जाता है कि इनाम तैयार है, पर पहले 'टैक्स', 'डिलीवरी' या 'प्रोसेसिंग' फ़ीस देनी होगी।",
+     "पैसे देने के बाद नई फ़ीस आती रहती है और इनाम कभी नहीं आता।"
+    ],
+    "hinglish": [
+     "Message kehta hai ki aapne lottery, lucky draw ya gift jeeta hai, jabki aapne kabhi hissa nahi liya.",
+     "Kaha jaata hai ki inaam ready hai, par pehle 'tax', 'delivery' ya 'processing' fees deni hogi.",
+     "Paise dene ke baad nayi fees aati rehti hain aur inaam kabhi nahi aata."
+    ]
+   },
+   "what_next": {
+    "en": [
+     "A 'tax' or 'processing' fee by UPI or bank transfer.",
+     "Your bank account, Aadhaar or PAN details.",
+     "More fees after each payment."
+    ],
+    "hi": [
+     "UPI या बैंक ट्रांसफ़र से 'टैक्स' या 'प्रोसेसिंग' फ़ीस।",
+     "आपके बैंक खाते, आधार या PAN की जानकारी।",
+     "हर पेमेंट के बाद और फ़ीस।"
+    ],
+    "hinglish": [
+     "UPI ya bank transfer se 'tax' ya 'processing' fees.",
+     "Aapke bank account, Aadhaar ya PAN ki details.",
+     "Har payment ke baad aur fees."
+    ]
+   },
+   "real_looks_like": {
+    "en": [
+     "You cannot win a contest you did not enter.",
+     "Genuine prizes never need you to pay first."
+    ],
+    "hi": [
+     "जिस प्रतियोगिता में आपने भाग नहीं लिया, उसे आप जीत नहीं सकते।",
+     "असली इनाम के लिए पहले पैसे नहीं देने पड़ते।"
+    ],
+    "hinglish": [
+     "Jis contest mein aapne hissa nahi liya, use aap jeet nahi sakte.",
+     "Asli inaam ke liye pehle paise nahi dene padte."
+    ]
+   }
+  },
+  {
+   "id": "investment_group",
+   "name": {
+    "en": "Investment / trading group scam",
+    "hi": "निवेश / ट्रेडिंग ग्रुप स्कैम",
+    "hinglish": "Investment / trading group scam"
+   },
+   "finding_ids": [
+    "investment_group",
+    "guaranteed_returns",
+    "move_to_chat",
+    "easy_earning",
+    "task_scam"
+   ],
+   "boost_terms": [
+    "trading",
+    "stock",
+    "crypto",
+    "ipo",
+    "invest",
+    "returns",
+    "profit"
+   ],
+   "how_it_works": {
+    "en": [
+     "You are invited to a WhatsApp or Telegram group sharing 'sure' stock or crypto tips.",
+     "Fake members post big profits and screenshots to build trust.",
+     "You are pushed to invest through a fake app, where your 'profit' shows on screen but cannot be withdrawn."
+    ],
+    "hi": [
+     "आपको WhatsApp या Telegram ग्रुप में बुलाया जाता है जहाँ 'पक्की' शेयर या क्रिप्टो टिप्स मिलती हैं।",
+     "नकली सदस्य बड़े मुनाफ़े और स्क्रीनशॉट डालकर भरोसा बनाते हैं।",
+     "आपको नकली ऐप से निवेश के लिए उकसाया जाता है, जहाँ 'मुनाफ़ा' स्क्रीन पर दिखता है पर निकल नहीं पाता।"
+    ],
+    "hinglish": [
+     "Aapko WhatsApp ya Telegram group mein bulaya jaata hai jahan 'pakki' share ya crypto tips milti hain.",
+     "Nakli members bade munafe aur screenshots daalkar bharosa banate hain.",
+     "Aapko nakli app se invest karne ke liye uksaya jaata hai, jahan 'munafa' screen par dikhta hai par nikal nahi paata."
+    ]
+   },
+   "what_next": {
+    "en": [
+     "Money to start, then more to 'unlock' withdrawals.",
+     "Installing an unknown trading app.",
+     "A 'tax' or 'fee' before you can take your profit out."
+    ],
+    "hi": [
+     "शुरू करने के लिए पैसे, फिर निकासी 'अनलॉक' करने के लिए और पैसे।",
+     "कोई अनजान ट्रेडिंग ऐप इंस्टॉल करना।",
+     "मुनाफ़ा निकालने से पहले 'टैक्स' या 'फ़ीस'।"
+    ],
+    "hinglish": [
+     "Shuru karne ke liye paise, phir withdrawal 'unlock' karne ke liye aur paise.",
+     "Koi anjaan trading app install karna.",
+     "Munafa nikalne se pehle 'tax' ya 'fees'."
+    ]
+   },
+   "real_looks_like": {
+    "en": [
+     "No one can promise guaranteed profit. Real advisers are registered and do not run tips through chat groups.",
+     "Use only well-known, regulated apps, and never invest because someone in a group pushes you."
+    ],
+    "hi": [
+     "कोई भी पक्के मुनाफ़े का वादा नहीं कर सकता। असली सलाहकार पंजीकृत होते हैं और चैट ग्रुप से टिप्स नहीं बेचते।",
+     "सिर्फ़ जाने-माने, नियमन वाले ऐप इस्तेमाल करें, और ग्रुप में किसी के कहने पर निवेश न करें।"
+    ],
+    "hinglish": [
+     "Koi bhi pakke munafe ka wada nahi kar sakta. Asli advisers registered hote hain aur chat groups se tips nahi bechte.",
+     "Sirf jaane-maane, regulated apps use karein, aur group mein kisi ke kehne par invest na karein."
+    ]
+   }
+  }
+ ]
+}

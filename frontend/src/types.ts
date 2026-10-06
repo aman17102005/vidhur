@@ -10,11 +10,24 @@ export interface Finding {
   action: string;
 }
 
+export type Lang = "en" | "hi" | "hinglish";
+
+export interface Playbook {
+  id: string;
+  name: string;
+  how_it_works: string[];
+  what_next: string[];
+  real_looks_like: string[];
+}
+
 export interface AnalysisResult {
   verdict: Verdict;
   findings: Finding[];
   next_step: string;
   report_hint?: string | null;
+  language?: Lang;
+  consequences?: string[];
+  playbook?: Playbook | null;
 }
 
 export type Provider = "openai" | "anthropic" | "gemini" | "grok";

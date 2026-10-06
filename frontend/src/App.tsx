@@ -1,6 +1,8 @@
 import { useState } from "react";
 import AiExplanation from "./components/AiExplanation";
 import QrScanner from "./components/QrScanner";
+import EmergencyHelp from "./components/EmergencyHelp";
+import PlaybookCard from "./components/PlaybookCard";
 import ScreenshotInput from "./components/ScreenshotInput";
 import SettingsPanel from "./components/SettingsPanel";
 import VerdictCard from "./components/VerdictCard";
@@ -30,6 +32,7 @@ export default function App() {
   const [fileName, setFileName] = useState("");
   const [settings, setSettings] = useState<AiSettings | null>(loadSettings);
   const [showSettings, setShowSettings] = useState(false);
+  const [view, setView] = useState<"check" | "emergency">("check");
 
   const ready = status === "ready";
   const disabled = busy || !ready;
@@ -69,6 +72,14 @@ export default function App() {
     setResult(null);
     setError("");
   };
+
+  if (view === "emergency") {
+    return (
+      <div className="mx-auto min-h-dvh max-w-xl px-4 pb-10 pt-[max(1rem,env(safe-area-inset-top))]">
+        <EmergencyHelp initialLang={result?.language ?? "en"} initialMessage={checked} onBack={() => setView("check")} />
+      </div>
+    );
+  }
 
   const canCheck = mode === "text" ? text.trim().length > 0 : url.trim().length > 0;
 
@@ -159,9 +170,17 @@ export default function App() {
               </details>
             )}
             <VerdictCard result={result} />
+            {result.playbook && <PlaybookCard playbook={result.playbook} lang={result.language ?? "en"} />}
             {settings && <AiExplanation settings={settings} content={checked} result={result} />}
           </div>
         )}
+
+        <button
+          onClick={() => setView("emergency")}
+          className="w-full rounded-2xl border-2 border-stone-300 px-4 py-4 text-center text-base font-semibold text-stone-800 active:bg-stone-100 dark:border-stone-700 dark:text-stone-200 dark:active:bg-stone-800"
+        >
+          🆘 Already paid or shared your OTP? Get help now
+        </button>
       </main>
 
       <footer className="mt-auto pt-10 text-center text-xs text-stone-500 dark:text-stone-500">

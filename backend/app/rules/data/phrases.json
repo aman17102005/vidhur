@@ -8,7 +8,10 @@
   },
   "rules": [
     {
-      "id": "ask_otp", "severity": "high", "action": "share_info", "negatable": true,
+      "id": "ask_otp",
+      "severity": "high",
+      "action": "share_info",
+      "negatable": true,
       "reason": "It asks you to share an OTP. Real banks, colleges and companies never ask for your OTP.",
       "any": [
         "\\b<REQ>\\W+<GAP>\\b(?:otp|one[- ]time[- ]password|verification\\s+code|security\\s+code)\\b",
@@ -16,7 +19,10 @@
       ]
     },
     {
-      "id": "ask_pin", "severity": "high", "action": "share_info", "negatable": true,
+      "id": "ask_pin",
+      "severity": "high",
+      "action": "share_info",
+      "negatable": true,
       "reason": "It asks for a PIN, CVV or card number. These must never be shared or entered anywhere except the official app.",
       "any": [
         "\\b(?:<REQ>|enter|type|put)\\W+<GAP>\\b(?:upi\\s+pin|mpin|m-pin|atm\\s+pin|debit\\s+card\\s+pin|cvv|cvc|card\\s+number|card\\s+expiry|expiry\\s+date)\\b",
@@ -24,35 +30,48 @@
       ]
     },
     {
-      "id": "ask_password", "severity": "high", "action": "share_info", "negatable": true,
+      "id": "ask_password",
+      "severity": "high",
+      "action": "share_info",
+      "negatable": true,
       "reason": "It asks for your password or login details. Nobody legitimate needs these from you by message.",
       "any": [
         "\\b(?:<REQ>|enter|type|put|confirm)\\W+<GAP>\\b(?:password|passcode|net\\s?banking\\s+(?:id|password|login)|login\\s+(?:details|credentials|id)|internet\\s+banking)\\b"
       ]
     },
     {
-      "id": "ask_bank_details", "severity": "high", "action": "share_info", "negatable": true,
+      "id": "ask_bank_details",
+      "severity": "high",
+      "action": "share_info",
+      "negatable": true,
       "reason": "It asks for your bank account or card details.",
       "any": [
         "\\b(?:<REQ>|update|verify|enter|confirm)\\W+<GAP>\\b(?:bank\\s+(?:account|details)|account\\s+(?:number|details)|a/c\\s+(?:no|number)|card\\s+details|debit\\s+card|credit\\s+card|ifsc)\\b"
       ]
     },
     {
-      "id": "ask_id_docs", "severity": "medium", "action": "share_info", "negatable": true,
+      "id": "ask_id_docs",
+      "severity": "medium",
+      "action": "share_info",
+      "negatable": true,
       "reason": "It asks you to send Aadhaar or PAN details. Scammers use these for identity theft and loan fraud.",
       "any": [
         "\\b(?:<REQ>|upload|submit)\\W+<GAP>\\b(?:aadhaar|aadhar|adhar|pan\\s+card|pan\\s+number|pan\\s+details)\\b"
       ]
     },
     {
-      "id": "remote_access", "severity": "high", "action": "remote",
+      "id": "remote_access",
+      "severity": "high",
+      "action": "remote",
       "reason": "It mentions remote-access or screen-sharing tools (like AnyDesk or TeamViewer). Scammers use these to take over your phone and empty your bank account.",
       "any": [
         "\\b(?:anydesk|any\\s+desk|teamviewer|team\\s+viewer|quicksupport|quick\\s+support|rustdesk|ammyy|airdroid|screen\\s+shar\\w+|share\\s+your\\s+screen|remote\\s+access)\\b"
       ]
     },
     {
-      "id": "pay_to_receive", "severity": "high", "action": "qr_pay",
+      "id": "pay_to_receive",
+      "severity": "high",
+      "action": "qr_pay",
       "reason": "It tells you to scan a QR code or enter your PIN to RECEIVE money. You never need to scan or enter a PIN to receive money. Doing so sends money out of your account.",
       "any": [
         "\\bscan\\W+(?:\\w+\\W+){0,3}(?:qr|code)\\W+(?:\\w+\\W+){0,4}(?:to\\s+)?(?:receive|get\\s+(?:the\\s+)?(?:money|payment|refund|cashback)|claim)\\b",
@@ -61,16 +80,26 @@
       ]
     },
     {
-      "id": "collect_request", "severity": "medium", "action": "qr_pay",
+      "id": "collect_request",
+      "severity": "medium",
+      "action": "qr_pay",
       "reason": "It asks you to approve a payment request in order to receive something. Approving a UPI request always sends money out.",
       "all": [
-        ["\\b(?:approve|accept)\\b"],
-        ["\\b(?:collect\\s+)?request\\b"],
-        ["\\b(?:receive|refund|cashback|reward|prize|credited)\\b"]
+        [
+          "\\b(?:approve|accept)\\b"
+        ],
+        [
+          "\\b(?:collect\\s+)?request\\b"
+        ],
+        [
+          "\\b(?:receive|refund|cashback|reward|prize|credited)\\b"
+        ]
       ]
     },
     {
-      "id": "apk_install", "severity": "high", "action": "bad_app",
+      "id": "apk_install",
+      "severity": "high",
+      "action": "bad_app",
       "reason": "It pushes you to install an app or APK file from a link or message. Fake 'KYC' and 'job' apps can read your SMS and steal OTPs.",
       "any": [
         "\\bapk\\b",
@@ -78,7 +107,9 @@
       ]
     },
     {
-      "id": "kyc_update", "severity": "medium", "action": "bad_link",
+      "id": "kyc_update",
+      "severity": "medium",
+      "action": "bad_link",
       "reason": "It says your KYC needs updating, which is the most common bank-fraud message in India. Banks do not ask you to complete KYC through links or phone calls.",
       "any": [
         "\\bkyc\\b(?:\\W+\\w+){0,6}\\W+(?:update|updat\\w+|expire\\w*|pending|verif\\w+|incomplete|suspend\\w*|block\\w*|mandatory|karo|karwa\\w*|kar\\s+lo|kijiye|cancel\\w*)\\b",
@@ -86,14 +117,18 @@
       ]
     },
     {
-      "id": "account_threat", "severity": "medium", "action": "bad_link",
+      "id": "account_threat",
+      "severity": "medium",
+      "action": "bad_link",
       "reason": "It threatens that your account, card or SIM will be blocked. Scammers use this threat to make you panic and click.",
       "any": [
         "\\b(?:account|a/c|card|sim|upi|wallet|number)\\b(?:\\W+\\w+){0,6}?\\W+(?:block|band|suspend|freez|deactivat|disconnect|terminat)\\w*\\b"
       ]
     },
     {
-      "id": "money_request_hinglish", "severity": "medium", "action": "pay_fee",
+      "id": "money_request_hinglish",
+      "severity": "medium",
+      "action": "pay_fee",
       "reason": "It asks you to send money (\"paise bhejo\" / \"payment karo\"). Do not send money to someone you have not verified.",
       "any": [
         "\\b(?:paise|paisa|pese|rupaye)\\s+(?:bhejo|bhej|transfer|do|dedo|de\\s+do|jama)\\b",
@@ -101,83 +136,148 @@
       ]
     },
     {
-      "id": "fee_for_opportunity", "severity": "high", "action": "pay_fee",
+      "id": "fee_for_opportunity",
+      "severity": "high",
+      "action": "pay_fee",
       "reason": "It asks for a fee or deposit connected to a job, internship or scholarship. Genuine employers and scholarship bodies do not charge you to get selected.",
       "all": [
         [
-          "\\bregistration\\s+(?:fee|charge|amount)s?\\b", "\\bsecurity\\s+deposit\\b", "\\bprocessing\\s+(?:fee|charge)s?\\b",
-          "\\brefundable\\b", "\\bjoining\\s+(?:fee|amount|charge)s?\\b", "\\btraining\\s+(?:fee|charge)s?\\b",
-          "\\bkit\\s+(?:fee|charge)s?\\b", "\\bcertificate\\s+(?:fee|charge)s?\\b", "\\bverification\\s+(?:fee|charge)s?\\b",
-          "\\badmin(?:istration)?\\s+(?:fee|charge)s?\\b", "\\b(?:pay|deposit|transfer|send)\\W+(?:only\\W+)?<MONEY>",
-          "<MONEY>[\\d,]*\\W+(?:only\\W+)?(?:fee|deposit|charges?)\\b", "\\bfees?\\s+(?:bhejo|bhar\\w+|jama)\\b"
+          "\\bregistration\\s+(?:fee|charge|amount)s?\\b",
+          "\\bsecurity\\s+deposit\\b",
+          "\\bprocessing\\s+(?:fee|charge)s?\\b",
+          "\\brefundable\\b",
+          "\\bjoining\\s+(?:fee|amount|charge)s?\\b",
+          "\\btraining\\s+(?:fee|charge)s?\\b",
+          "\\bkit\\s+(?:fee|charge)s?\\b",
+          "\\bcertificate\\s+(?:fee|charge)s?\\b",
+          "\\bverification\\s+(?:fee|charge)s?\\b",
+          "\\badmin(?:istration)?\\s+(?:fee|charge)s?\\b",
+          "\\b(?:pay|deposit|transfer|send)\\W+(?:only\\W+)?<MONEY>",
+          "<MONEY>[\\d,]*\\W+(?:only\\W+)?(?:fee|deposit|charges?)\\b",
+          "\\bfees?\\s+(?:bhejo|bhar\\w+|jama)\\b"
         ],
-        ["<OPP>"]
+        [
+          "<OPP>"
+        ]
       ]
     },
     {
-      "id": "pay_to_unlock", "severity": "high", "action": "pay_fee",
+      "id": "pay_to_unlock",
+      "severity": "high",
+      "action": "pay_fee",
       "reason": "It says you must pay first to unlock or claim a prize, refund or scholarship. Real payouts never require you to pay first.",
       "all": [
-        ["\\b(?:pay|deposit|transfer)\\b"],
-        ["\\b(?:unlock|release|claim|withdraw)\\b"],
-        ["\\b(?:scholarship|stipend|prize|reward|grant|cashback|refund|lottery|winnings?)\\b"]
+        [
+          "\\b(?:pay|deposit|transfer)\\b"
+        ],
+        [
+          "\\b(?:unlock|release|claim|withdraw)\\b"
+        ],
+        [
+          "\\b(?:scholarship|stipend|prize|reward|grant|cashback|refund|lottery|winnings?)\\b"
+        ]
       ]
     },
     {
-      "id": "no_interview_selected", "severity": "medium", "action": "verify",
+      "id": "no_interview_selected",
+      "severity": "medium",
+      "action": "verify",
       "reason": "It promises selection or a job without an interview. Real companies and colleges always have a selection process.",
       "any": [
-        "\\b(?:no|without)\\s+(?:any\\s+)?interview\\b", "\\bdirectly\\s+selected\\b", "\\bselected\\s+without\\b",
-        "\\bguaranteed\\s+(?:job|placement|selection|internship)\\b", "\\b100\\s?%\\s+(?:job|placement|selection)\\b",
+        "\\b(?:no|without)\\s+(?:any\\s+)?interview\\b",
+        "\\bdirectly\\s+selected\\b",
+        "\\bselected\\s+without\\b",
+        "\\bguaranteed\\s+(?:job|placement|selection|internship)\\b",
+        "\\b100\\s?%\\s+(?:job|placement|selection)\\b",
         "\\binterview\\s+(?:nahi|nahin)\\b"
       ]
     },
     {
-      "id": "easy_earning", "severity": "medium", "action": "verify",
+      "id": "easy_earning",
+      "severity": "medium",
+      "action": "verify",
       "reason": "It promises easy daily earnings. Offers like \"earn ₹5000/day from home\" are the usual fake-job bait.",
       "any": [
         "\\bearn\\W+(?:up\\s+to\\W+)?(?:rs\\.?|inr|₹)?\\s?\\d[\\d,]*\\W*(?:/-)?\\W*(?:per|/|a|each)?\\W*(?:day|daily|hour|week)\\b",
         "(?:rs\\.?|inr|₹)\\s?\\d[\\d,]*\\W*(?:/-)?\\W*(?:per|/)\\W*(?:day|daily|hour)\\b",
         "\\b(?:daily|weekly)\\s+(?:payment|payout|income|salary)\\b",
         "\\bwork\\s+from\\s+home\\W+(?:\\w+\\W+){0,6}(?:earn|income|salary|₹|rs)",
-        "\\beasy\\s+money\\b", "\\bearn\\s+money\\s+online\\b", "\\bpart[- ]time\\W+(?:\\w+\\W+){0,4}(?:earn|income)\\b"
+        "\\beasy\\s+money\\b",
+        "\\bearn\\s+money\\s+online\\b",
+        "\\bpart[- ]time\\W+(?:\\w+\\W+){0,4}(?:earn|income)\\b"
       ]
     },
     {
-      "id": "task_scam", "severity": "high", "action": "pay_fee",
+      "id": "task_scam",
+      "severity": "high",
+      "action": "pay_fee",
       "reason": "It describes paid 'tasks' (liking, rating, subscribing). This is a known scam that pays small amounts first, then makes you deposit larger sums.",
       "any": [
         "\\b(?:complete|finish|do)\\W+(?:\\w+\\W+){0,3}tasks?\\W+(?:\\w+\\W+){0,8}(?:earn|commission|income|reward|paid)\\b",
         "\\b(?:like|subscribe|rate|review)\\W+(?:\\w+\\W+){0,5}(?:youtube|google\\s+maps|videos?|products?|hotels?)\\W+(?:\\w+\\W+){0,8}(?:earn|paid|commission|₹|rs)",
-        "\\bprepaid\\s+tasks?\\b", "\\bcommission\\W+(?:\\w+\\W+){0,6}tasks?\\b"
+        "\\bprepaid\\s+tasks?\\b",
+        "\\bcommission\\W+(?:\\w+\\W+){0,6}tasks?\\b"
       ]
     },
     {
-      "id": "prize_bait", "severity": "medium", "action": "verify",
+      "id": "prize_bait",
+      "severity": "medium",
+      "action": "verify",
       "reason": "It says you won something or can 'claim' a reward or scholarship. You cannot win contests you never entered.",
       "any": [
-        "\\b(?:congratulations|congrats)\\W+(?:\\w+\\W+){0,6}(?:won|winner|lottery|prize)\\b", "\\blucky\\s+draw\\b", "\\blottery\\b",
+        "\\b(?:congratulations|congrats)\\W+(?:\\w+\\W+){0,6}(?:won|winner|lottery|prize)\\b",
+        "\\blucky\\s+draw\\b",
+        "\\blottery\\b",
         "\\bclaim\\W+(?:your\\W+)?(?:\\w+\\W+){0,2}(?:scholarship|prize|reward|gift|cashback|refund)\\b"
       ]
     },
     {
-      "id": "selected_unprompted", "severity": "low", "action": "verify",
+      "id": "selected_unprompted",
+      "severity": "low",
+      "action": "verify",
       "reason": "It says you were 'selected' or 'shortlisted'. Check that you actually applied. Scammers send these to everyone.",
       "any": [
         "\\byou(?:\\s+have|'ve|\\s+are|\\s+were)\\s+(?:been\\s+)?(?:selected|chosen|shortlisted)\\b"
       ]
     },
     {
-      "id": "guaranteed_returns", "severity": "medium", "action": "pay_fee",
+      "id": "guaranteed_returns",
+      "severity": "medium",
+      "action": "pay_fee",
       "reason": "It promises guaranteed profit or doubled money. No genuine investment can guarantee returns.",
       "any": [
-        "\\bguaranteed\\W+(?:\\w+\\W+){0,2}(?:returns?|profit|income)\\b", "\\bdouble\\W+(?:your\\W+)?money\\b",
+        "\\bguaranteed\\W+(?:\\w+\\W+){0,2}(?:returns?|profit|income)\\b",
+        "\\bdouble\\W+(?:your\\W+)?money\\b",
         "\\b(?:daily|weekly)\\W+(?:\\w+\\W+){0,2}(?:profit|returns?)\\b",
         "\\binvest\\W+(?:\\w+\\W+){0,6}(?:earn|profit|returns?)\\W+(?:\\w+\\W+){0,6}(?:daily|weekly|guaranteed)\\b"
       ]
     },
     {
-      "id": "move_to_chat", "severity": "low", "action": "verify",
+      "id": "investment_group",
+      "severity": "medium",
+      "action": "pay_fee",
+      "reason": "It invites you to a stock, trading or crypto 'tips' group. These groups are a common way to lure students into investment scams.",
+      "any": [
+        "\\b(?:join|add|invite)\\W+(?:\\w+\\W+){0,4}(?:stock|trading|share\\s+market|crypto|ipo|investment|forex)\\W+(?:\\w+\\W+){0,3}(?:group|channel|community|signals?|tips)\\b",
+        "\\b(?:vip|premium)\\W+(?:\\w+\\W+){0,2}(?:group|tips|signals?)\\b",
+        "\\bsure[- ]?shot\\W+(?:\\w+\\W+){0,2}(?:profit|returns?|tips?)\\b"
+      ]
+    },
+    {
+      "id": "parcel_scam",
+      "severity": "medium",
+      "action": "bad_link",
+      "reason": "It says a parcel is held or undelivered and asks for a fee or address update. Courier scams work this way.",
+      "any": [
+        "\\b(?:parcel|courier|package|shipment|consignment)\\b(?:\\W+\\w+){0,8}\\W+(?:held|stuck|on\\s+hold|returned|undelivered|could\\s+not\\s+be\\s+delivered|delivery\\s+(?:failed|attempt)|failed\\s+delivery|incomplete\\s+address|address\\s+(?:issue|incomplete|not\\s+found)|customs)\\b",
+        "\\b(?:customs|redelivery|re-delivery)\\s+(?:fee|charge|duty)s?\\b",
+        "\\bupdate\\W+(?:\\w+\\W+){0,2}address\\W+(?:\\w+\\W+){0,6}(?:parcel|package|delivery|courier)\\b"
+      ]
+    },
+    {
+      "id": "move_to_chat",
+      "severity": "low",
+      "action": "verify",
       "reason": "It moves the conversation to WhatsApp or Telegram. Scammers do this to avoid official records.",
       "any": [
         "\\b(?:contact|message|msg|text|whatsapp|connect|apply)\\W+(?:\\w+\\W+){0,5}(?:on\\W+)?(?:whatsapp|telegram)\\b",
@@ -185,7 +285,9 @@
       ]
     },
     {
-      "id": "urgency", "severity": "low", "action": "verify",
+      "id": "urgency",
+      "severity": "low",
+      "action": "verify",
       "reason": "It pressures you to act fast. Scammers rush you so you do not stop to check.",
       "any": [
         "\\bwithin\\W+(?:\\w+\\W+){0,2}(?:minutes?|mins?|hours?|hrs?)\\b",
@@ -194,29 +296,62 @@
       ]
     },
     {
-      "id": "dev_otp", "severity": "high", "action": "share_info",
+      "id": "dev_otp",
+      "severity": "high",
+      "action": "share_info",
       "reason": "It asks you to share an OTP (written in Hindi). Real banks and companies never ask for your OTP.",
-      "all": [["ओटीपी"], ["बता", "भेज", "शेयर", "दें", "दो"]]
+      "all": [
+        [
+          "ओटीपी"
+        ],
+        [
+          "बता",
+          "भेज",
+          "शेयर",
+          "दें",
+          "दो"
+        ]
+      ]
     },
     {
-      "id": "dev_kyc", "severity": "medium", "action": "bad_link",
+      "id": "dev_kyc",
+      "severity": "medium",
+      "action": "bad_link",
       "reason": "It talks about KYC updates (written in Hindi), the most common bank-fraud message in India.",
-      "any": ["केवाईसी", "केवायसी"]
+      "any": [
+        "केवाईसी",
+        "केवायसी"
+      ]
     },
     {
-      "id": "dev_account_threat", "severity": "medium", "action": "bad_link",
+      "id": "dev_account_threat",
+      "severity": "medium",
+      "action": "bad_link",
       "reason": "It threatens that your account, card or SIM will be blocked (written in Hindi).",
-      "any": ["(?:खाता|अकाउंट|कार्ड|सिम)[^.।]{0,30}(?:बंद|ब्लॉक|निलंबित)"]
+      "any": [
+        "(?:खाता|अकाउंट|कार्ड|सिम)[^.।]{0,30}(?:बंद|ब्लॉक|निलंबित)"
+      ]
     },
     {
-      "id": "dev_money_request", "severity": "medium", "action": "pay_fee",
+      "id": "dev_money_request",
+      "severity": "medium",
+      "action": "pay_fee",
       "reason": "It asks you to send money (written in Hindi).",
-      "any": ["पैसे\\s*(?:भेजो|भेजें|ट्रांसफर|जमा)"]
+      "any": [
+        "पैसे\\s*(?:भेजो|भेजें|ट्रांसफर|जमा)"
+      ]
     },
     {
-      "id": "dev_urgency", "severity": "low", "action": "verify",
+      "id": "dev_urgency",
+      "severity": "low",
+      "action": "verify",
       "reason": "It pressures you to act fast (written in Hindi).",
-      "any": ["तुरंत", "जल्दी", "अभी\\s+करो", "आज\\s+ही"]
+      "any": [
+        "तुरंत",
+        "जल्दी",
+        "अभी\\s+करो",
+        "आज\\s+ही"
+      ]
     }
   ]
 }

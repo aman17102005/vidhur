@@ -1,0 +1,213 @@
+{
+ "_comment": "Maps a finding id to what could happen if the user acts. Wording must use 'can/may/usually', never certainty. A finding id with no entry must be listed in no_consequence (a test enforces this). Languages: en, hi, hinglish.",
+ "no_consequence": [
+  "no_interview_selected",
+  "selected_unprompted",
+  "move_to_chat",
+  "move_to_chat_link",
+  "urgency",
+  "dev_urgency",
+  "shouting",
+  "risky_tld",
+  "free_hosting",
+  "odd_structure",
+  "no_https",
+  "url_bait_words",
+  "form_collect",
+  "freemail_company"
+ ],
+ "consequences": {
+  "ask_otp": {
+   "severity": "high",
+   "en": "If you share this OTP, the person can log in to your account or approve a payment as you.",
+   "hi": "अगर आप यह OTP बताते हैं, तो सामने वाला आपके खाते में लॉग इन कर सकता है या आपकी ओर से पेमेंट मंज़ूर कर सकता है।",
+   "hinglish": "Agar aap yeh OTP batate hain, to samne wala aapke account mein login kar sakta hai ya aapki taraf se payment approve kar sakta hai."
+  },
+  "dev_otp": {
+   "severity": "high",
+   "en": "If you share this OTP, the person can log in to your account or approve a payment as you.",
+   "hi": "अगर आप यह OTP बताते हैं, तो सामने वाला आपके खाते में लॉग इन कर सकता है या आपकी ओर से पेमेंट मंज़ूर कर सकता है।",
+   "hinglish": "Agar aap yeh OTP batate hain, to samne wala aapke account mein login kar sakta hai ya aapki taraf se payment approve kar sakta hai."
+  },
+  "ask_pin": {
+   "severity": "high",
+   "en": "If you share or enter this PIN, money can leave your account straight away and may be very hard to get back.",
+   "hi": "अगर आप यह PIN बताते या डालते हैं, तो पैसे तुरंत आपके खाते से निकल सकते हैं और वापस मिलना बहुत मुश्किल हो सकता है।",
+   "hinglish": "Agar aap yeh PIN batate ya daalte hain, to paise turant aapke account se nikal sakte hain aur wapas milna bahut mushkil ho sakta hai."
+  },
+  "ask_password": {
+   "severity": "high",
+   "en": "If you share your password, the person can take over your account and lock you out.",
+   "hi": "अगर आप अपना पासवर्ड बताते हैं, तो सामने वाला आपका खाता अपने कब्ज़े में ले सकता है और आपको बाहर कर सकता है।",
+   "hinglish": "Agar aap apna password batate hain, to samne wala aapka account apne kabze mein le sakta hai aur aapko bahar kar sakta hai."
+  },
+  "ask_bank_details": {
+   "severity": "high",
+   "en": "If you share your bank or card details, they may use them to take money or shop in your name.",
+   "hi": "अगर आप अपने बैंक या कार्ड की जानकारी देते हैं, तो उनसे पैसे निकाले जा सकते हैं या आपके नाम पर खरीदारी हो सकती है।",
+   "hinglish": "Agar aap apne bank ya card ki details dete hain, to unse paise nikale ja sakte hain ya aapke naam par shopping ho sakti hai."
+  },
+  "ask_id_docs": {
+   "severity": "medium",
+   "en": "If you send your Aadhaar or PAN, they can be misused to open fake accounts or take loans in your name.",
+   "hi": "अगर आप अपना आधार या PAN भेजते हैं, तो उसका गलत इस्तेमाल करके नकली खाते खोले जा सकते हैं या आपके नाम पर लोन लिया जा सकता है।",
+   "hinglish": "Agar aap apna Aadhaar ya PAN bhejte hain, to uska galat istemal karke nakli account khole ja sakte hain ya aapke naam par loan liya ja sakta hai."
+  },
+  "remote_access": {
+   "severity": "high",
+   "en": "If you install this app or share your screen, the person can see your phone and may move money out of your bank account.",
+   "hi": "अगर आप यह ऐप इंस्टॉल करते हैं या स्क्रीन शेयर करते हैं, तो सामने वाला आपका फ़ोन देख सकता है और आपके बैंक खाते से पैसे निकाल सकता है।",
+   "hinglish": "Agar aap yeh app install karte hain ya screen share karte hain, to samne wala aapka phone dekh sakta hai aur aapke bank account se paise nikal sakta hai."
+  },
+  "pay_to_receive": {
+   "severity": "high",
+   "en": "If you scan this or enter your PIN, money leaves your account. You never need a QR code or PIN to receive money.",
+   "hi": "अगर आप इसे स्कैन करते हैं या PIN डालते हैं, तो पैसे आपके खाते से कट जाते हैं। पैसे पाने के लिए QR या PIN की ज़रूरत कभी नहीं होती।",
+   "hinglish": "Agar aap ise scan karte hain ya PIN daalte hain, to paise aapke account se kat jaate hain. Paise paane ke liye QR ya PIN ki zaroorat kabhi nahi hoti."
+  },
+  "collect_request": {
+   "severity": "medium",
+   "en": "If you approve this request, money leaves your account instead of coming in.",
+   "hi": "अगर आप यह रिक्वेस्ट मंज़ूर करते हैं, तो पैसे आपके खाते में आने की जगह आपके खाते से निकल जाते हैं।",
+   "hinglish": "Agar aap yeh request approve karte hain, to paise aapke account mein aane ki jagah aapke account se nikal jaate hain."
+  },
+  "upi_pay_qr": {
+   "severity": "medium",
+   "en": "If you scan this QR and confirm, money leaves your account. A QR is never needed to receive money.",
+   "hi": "अगर आप यह QR स्कैन करके कन्फ़र्म करते हैं, तो पैसे आपके खाते से निकल जाते हैं। पैसे पाने के लिए QR की ज़रूरत कभी नहीं होती।",
+   "hinglish": "Agar aap yeh QR scan karke confirm karte hain, to paise aapke account se nikal jaate hain. Paise paane ke liye QR ki zaroorat kabhi nahi hoti."
+  },
+  "apk_install": {
+   "severity": "high",
+   "en": "If you install this app, it may read your messages and OTPs and give the sender control over your banking apps.",
+   "hi": "अगर आप यह ऐप इंस्टॉल करते हैं, तो यह आपके मैसेज और OTP पढ़ सकता है और भेजने वाले को आपके बैंकिंग ऐप पर कंट्रोल दे सकता है।",
+   "hinglish": "Agar aap yeh app install karte hain, to yeh aapke message aur OTP padh sakta hai aur bhejne wale ko aapke banking app par control de sakta hai."
+  },
+  "kyc_update": {
+   "severity": "medium",
+   "en": "If you follow this 'KYC' link or call, you may be tricked into giving OTPs or card details, and your account can be emptied.",
+   "hi": "अगर आप इस 'KYC' लिंक या कॉल पर जाते हैं, तो आपसे OTP या कार्ड की जानकारी ली जा सकती है और आपका खाता खाली हो सकता है।",
+   "hinglish": "Agar aap is 'KYC' link ya call par jaate hain, to aapse OTP ya card ki details li ja sakti hain aur aapka account khali ho sakta hai."
+  },
+  "dev_kyc": {
+   "severity": "medium",
+   "en": "If you follow this 'KYC' link or call, you may be tricked into giving OTPs or card details, and your account can be emptied.",
+   "hi": "अगर आप इस 'KYC' लिंक या कॉल पर जाते हैं, तो आपसे OTP या कार्ड की जानकारी ली जा सकती है और आपका खाता खाली हो सकता है।",
+   "hinglish": "Agar aap is 'KYC' link ya call par jaate hain, to aapse OTP ya card ki details li ja sakti hain aur aapka account khali ho sakta hai."
+  },
+  "account_threat": {
+   "severity": "medium",
+   "en": "If you panic and click, you may land on a fake page that steals your login details.",
+   "hi": "घबराकर क्लिक करने पर आप ऐसे नकली पेज पर पहुँच सकते हैं जो आपका लॉगिन चुरा ले।",
+   "hinglish": "Ghabrakar click karne par aap aise nakli page par pahunch sakte hain jo aapka login chura le."
+  },
+  "dev_account_threat": {
+   "severity": "medium",
+   "en": "If you panic and click, you may land on a fake page that steals your login details.",
+   "hi": "घबराकर क्लिक करने पर आप ऐसे नकली पेज पर पहुँच सकते हैं जो आपका लॉगिन चुरा ले।",
+   "hinglish": "Ghabrakar click karne par aap aise nakli page par pahunch sakte hain jo aapka login chura le."
+  },
+  "money_request_hinglish": {
+   "severity": "medium",
+   "en": "If you send this money, you usually cannot get it back, and more demands often follow.",
+   "hi": "अगर आप यह पैसे भेजते हैं, तो आमतौर पर वापस नहीं मिलते और अक्सर और माँगें आती रहती हैं।",
+   "hinglish": "Agar aap yeh paise bhejte hain, to aamtaur par wapas nahi milte aur aksar aur demands aati rehti hain."
+  },
+  "dev_money_request": {
+   "severity": "medium",
+   "en": "If you send this money, you usually cannot get it back, and more demands often follow.",
+   "hi": "अगर आप यह पैसे भेजते हैं, तो आमतौर पर वापस नहीं मिलते और अक्सर और माँगें आती रहती हैं।",
+   "hinglish": "Agar aap yeh paise bhejte hain, to aamtaur par wapas nahi milte aur aksar aur demands aati rehti hain."
+  },
+  "fee_for_opportunity": {
+   "severity": "high",
+   "en": "If you pay this fee, the offer usually disappears and the money is not returned.",
+   "hi": "अगर आप यह फ़ीस देते हैं, तो ऑफ़र आमतौर पर गायब हो जाता है और पैसे वापस नहीं मिलते।",
+   "hinglish": "Agar aap yeh fees dete hain, to offer aamtaur par gayab ho jaata hai aur paise wapas nahi milte."
+  },
+  "pay_to_unlock": {
+   "severity": "high",
+   "en": "If you pay to 'unlock' a prize or scholarship, you usually lose the money and receive nothing.",
+   "hi": "अगर आप इनाम या स्कॉलरशिप 'अनलॉक' करने के लिए पैसे देते हैं, तो आमतौर पर पैसे डूब जाते हैं और कुछ नहीं मिलता।",
+   "hinglish": "Agar aap inaam ya scholarship 'unlock' karne ke liye paise dete hain, to aamtaur par paise doob jaate hain aur kuch nahi milta."
+  },
+  "easy_earning": {
+   "severity": "medium",
+   "en": "If you join, you may be asked for a deposit or personal details later, and the promised earnings usually never arrive.",
+   "hi": "अगर आप जुड़ते हैं, तो बाद में आपसे डिपॉज़िट या निजी जानकारी माँगी जा सकती है, और वादा की गई कमाई आमतौर पर कभी नहीं आती।",
+   "hinglish": "Agar aap jud jaate hain, to baad mein aapse deposit ya personal details maangi ja sakti hain, aur wada ki gayi kamai aamtaur par kabhi nahi aati."
+  },
+  "task_scam": {
+   "severity": "high",
+   "en": "You may be paid small amounts first, then pushed to deposit bigger sums that you usually cannot withdraw.",
+   "hi": "शुरू में आपको छोटी रकम दी जा सकती है, फिर बड़ी रकम जमा करने के लिए कहा जाता है जो आमतौर पर निकाल नहीं पाते।",
+   "hinglish": "Shuru mein aapko chhoti rakam di ja sakti hai, phir badi rakam jama karne ko kaha jaata hai jo aamtaur par nikaal nahi paate."
+  },
+  "prize_bait": {
+   "severity": "medium",
+   "en": "If you 'claim' this prize, you will usually be asked for fees or bank details, and there is no real prize.",
+   "hi": "अगर आप यह इनाम 'क्लेम' करते हैं, तो आमतौर पर फ़ीस या बैंक की जानकारी माँगी जाती है, और असल में कोई इनाम नहीं होता।",
+   "hinglish": "Agar aap yeh inaam 'claim' karte hain, to aamtaur par fees ya bank details maangi jaati hain, aur asal mein koi inaam nahi hota."
+  },
+  "guaranteed_returns": {
+   "severity": "medium",
+   "en": "If you invest, you may lose all the money. No real investment can promise guaranteed profit.",
+   "hi": "अगर आप निवेश करते हैं, तो सारा पैसा डूब सकता है। कोई भी असली निवेश पक्का मुनाफ़ा नहीं दे सकता।",
+   "hinglish": "Agar aap invest karte hain, to saara paisa doob sakta hai. Koi bhi asli investment pakka munafa nahi de sakta."
+  },
+  "investment_group": {
+   "severity": "medium",
+   "en": "If you follow the group's 'tips', you may be pushed to put more money into fake apps or sites and lose it.",
+   "hi": "अगर आप ग्रुप की 'टिप्स' मानते हैं, तो आपको नकली ऐप या साइट पर और पैसे लगाने के लिए उकसाया जा सकता है और पैसे डूब सकते हैं।",
+   "hinglish": "Agar aap group ki 'tips' maante hain, to aapko nakli app ya site par aur paise lagane ke liye uksaya ja sakta hai aur paise doob sakte hain."
+  },
+  "parcel_scam": {
+   "severity": "medium",
+   "en": "If you pay the 'fee' or enter details on that link, you may lose money or give away your card details for a parcel that does not exist.",
+   "hi": "अगर आप उस लिंक पर 'फ़ीस' देते हैं या जानकारी डालते हैं, तो आपके पैसे या कार्ड की जानकारी जा सकती है, जबकि ऐसा कोई पार्सल होता ही नहीं।",
+   "hinglish": "Agar aap us link par 'fees' dete hain ya details daalte hain, to aapke paise ya card ki details ja sakti hain, jabki aisa koi parcel hota hi nahi."
+  },
+  "lookalike_domain": {
+   "severity": "high",
+   "en": "If you enter your details on this fake site, the scammer can get your login, card details or OTP.",
+   "hi": "अगर आप इस नकली साइट पर अपनी जानकारी डालते हैं, तो ठग को आपका लॉगिन, कार्ड की जानकारी या OTP मिल सकता है।",
+   "hinglish": "Agar aap is nakli site par apni details daalte hain, to thug ko aapka login, card details ya OTP mil sakta hai."
+  },
+  "lookalike_chars": {
+   "severity": "high",
+   "en": "If you enter your details on this fake site, the scammer can get your login, card details or OTP.",
+   "hi": "अगर आप इस नकली साइट पर अपनी जानकारी डालते हैं, तो ठग को आपका लॉगिन, कार्ड की जानकारी या OTP मिल सकता है।",
+   "hinglish": "Agar aap is nakli site par apni details daalte hain, to thug ko aapka login, card details ya OTP mil sakta hai."
+  },
+  "link_mismatch": {
+   "severity": "high",
+   "en": "This link goes to a different site than the one it shows. Anything you type there may go straight to the scammer.",
+   "hi": "यह लिंक उस साइट पर नहीं जाता जो दिखाई गई है। वहाँ आप जो भी डालेंगे वह सीधे ठग के पास जा सकता है।",
+   "hinglish": "Yeh link us site par nahi jaata jo dikhayi gayi hai. Wahan aap jo bhi daalenge woh seedha thug ke paas ja sakta hai."
+  },
+  "url_at_trick": {
+   "severity": "high",
+   "en": "This link may open a different site than it appears to, and anything you type there may be stolen.",
+   "hi": "यह लिंक जैसा दिखता है उससे अलग साइट खोल सकता है, और वहाँ डाली गई जानकारी चुराई जा सकती है।",
+   "hinglish": "Yeh link jaisa dikhta hai usse alag site khol sakta hai, aur wahan daali gayi details churayi ja sakti hain."
+  },
+  "shortener": {
+   "severity": "medium",
+   "en": "A shortened link can hide a fake site. If you open it and type details, they may be stolen.",
+   "hi": "छोटा किया हुआ लिंक नकली साइट छिपा सकता है। उसे खोलकर जानकारी डालने पर वह चुराई जा सकती है।",
+   "hinglish": "Chhota kiya hua link nakli site chhipa sakta hai. Ise kholkar details daalne par woh churayi ja sakti hain."
+  },
+  "ip_host": {
+   "severity": "medium",
+   "en": "A link like this may open a fake page that steals whatever you type.",
+   "hi": "ऐसा लिंक नकली पेज खोल सकता है जो आप जो भी डालें उसे चुरा ले।",
+   "hinglish": "Aisa link nakli page khol sakta hai jo aap jo bhi daalein use chura le."
+  },
+  "fake_gov": {
+   "severity": "medium",
+   "en": "A fake 'government' site can collect your documents and fees and give you nothing in return.",
+   "hi": "नकली 'सरकारी' साइट आपके दस्तावेज़ और फ़ीस ले सकती है और बदले में कुछ नहीं देती।",
+   "hinglish": "Nakli 'sarkari' site aapke documents aur fees le sakti hai aur badle mein kuch nahi deti."
+  }
+ }
+}

@@ -13,11 +13,22 @@ class Finding(BaseModel):
     action: str = "verify"
 
 
+class Playbook(BaseModel):
+    id: str
+    name: str
+    how_it_works: List[str]
+    what_next: List[str]
+    real_looks_like: List[str]
+
+
 class AnalysisResult(BaseModel):
     verdict: str  # "safe" | "suspicious" | "high_risk"
     findings: List[Finding]
     next_step: str
     report_hint: Optional[str] = None
+    language: str = "en"  # "en" | "hi" | "hinglish": language of consequences and playbook
+    consequences: List[str] = []
+    playbook: Optional[Playbook] = None
 
 
 class AnalyzeRequest(BaseModel):

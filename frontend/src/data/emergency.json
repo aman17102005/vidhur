@@ -1,0 +1,285 @@
+{
+ "_comment": "All emergency wording, phone numbers and URLs live in this one file. Update last_verified whenever you re-check the sources. Never add a number you have not verified.",
+ "last_verified": "2026-10-06",
+ "verified_from": [
+  {
+   "what": "Helpline 1930 for reporting financial cyber fraud, and portal www.cybercrime.gov.in",
+   "source": "Press Information Bureau (Ministry of Home Affairs) releases on cyber frauds",
+   "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2176146&reg=48&lang=2"
+  }
+ ],
+ "contacts": {
+  "helpline": {
+   "number": "1930",
+   "tel": "tel:1930",
+   "label": {
+    "en": "National Cyber Fraud Helpline",
+    "hi": "राष्ट्रीय साइबर धोखाधड़ी हेल्पलाइन",
+    "hinglish": "National Cyber Fraud Helpline"
+   }
+  },
+  "portal": {
+   "url": "https://cybercrime.gov.in",
+   "display": "cybercrime.gov.in",
+   "label": {
+    "en": "National Cyber Crime Reporting Portal",
+    "hi": "राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल",
+    "hinglish": "National Cyber Crime Reporting Portal"
+   }
+  }
+ },
+ "bank_note": {
+  "en": "Use the bank number printed on your card or passbook. Vidhur does not list bank numbers because they differ by bank.",
+  "hi": "कार्ड या पासबुक पर छपा बैंक नंबर इस्तेमाल करें। Vidhur बैंक नंबर नहीं देता क्योंकि वे हर बैंक के अलग होते हैं।",
+  "hinglish": "Card ya passbook par chhapa bank number use karein. Vidhur bank numbers nahi deta kyunki woh har bank ke alag hote hain."
+ },
+ "disclaimer": {
+  "en": "Vidhur is not a bank or a government service. Call your bank and 1930 first.",
+  "hi": "Vidhur कोई बैंक या सरकारी सेवा नहीं है। पहले अपने बैंक और 1930 को फ़ोन करें।",
+  "hinglish": "Vidhur koi bank ya sarkari seva nahi hai. Pehle apne bank aur 1930 ko phone karein."
+ },
+ "languages": [
+  {
+   "code": "en",
+   "label": "English"
+  },
+  {
+   "code": "hi",
+   "label": "हिंदी"
+  },
+  {
+   "code": "hinglish",
+   "label": "Hinglish"
+  }
+ ],
+ "ui": {
+  "button": {
+   "en": "I already paid / shared my OTP",
+   "hi": "मैं पैसे भेज चुका/चुकी हूँ / OTP बता दिया",
+   "hinglish": "Maine paise bhej diye / OTP bata diya"
+  },
+  "title": {
+   "en": "Help after a scam",
+   "hi": "स्कैम के बाद मदद",
+   "hinglish": "Scam ke baad madad"
+  },
+  "calm": {
+   "en": "Take a breath. You have done the right thing by looking for help. Acting quickly can help.",
+   "hi": "गहरी साँस लें। मदद ढूँढकर आपने सही किया। जल्दी कदम उठाने से मदद मिल सकती है।",
+   "hinglish": "Gehri saans lein. Madad dhoondhkar aapne sahi kiya. Jaldi kadam uthane se madad mil sakti hai."
+  },
+  "question": {
+   "en": "What happened?",
+   "hi": "क्या हुआ?",
+   "hinglish": "Kya hua?"
+  },
+  "pick_closest": {
+   "en": "Pick the closest one.",
+   "hi": "जो सबसे करीब हो वह चुनें।",
+   "hinglish": "Jo sabse kareeb ho woh chunein."
+  },
+  "checklist": {
+   "en": "Do these steps, in order",
+   "hi": "ये कदम क्रम से उठाएँ",
+   "hinglish": "Yeh kadam kram se uthayein"
+  },
+  "call_now": {
+   "en": "Call 1930 now",
+   "hi": "अभी 1930 पर कॉल करें",
+   "hinglish": "Abhi 1930 par call karein"
+  },
+  "open_portal": {
+   "en": "Open cybercrime.gov.in",
+   "hi": "cybercrime.gov.in खोलें",
+   "hinglish": "cybercrime.gov.in kholein"
+  },
+  "change_answer": {
+   "en": "Choose a different answer",
+   "hi": "दूसरा जवाब चुनें",
+   "hinglish": "Doosra jawab chunein"
+  },
+  "back": {
+   "en": "Back to Vidhur",
+   "hi": "Vidhur पर वापस",
+   "hinglish": "Vidhur par wapas"
+  },
+  "complaint_title": {
+   "en": "Complaint draft (optional)",
+   "hi": "शिकायत का ड्राफ़्ट (वैकल्पिक)",
+   "hinglish": "Complaint draft (optional)"
+  },
+  "complaint_privacy": {
+   "en": "This draft is written on your device only. Nothing you type here is sent anywhere or saved.",
+   "hi": "यह ड्राफ़्ट सिर्फ़ आपके डिवाइस पर बनता है। यहाँ जो भी लिखें वह कहीं भेजा या सेव नहीं किया जाता।",
+   "hinglish": "Yeh draft sirf aapke device par banta hai. Yahan jo bhi likhein woh kahin bheja ya save nahi kiya jaata."
+  },
+  "field_date": {
+   "en": "Date it happened",
+   "hi": "तारीख़ जब हुआ",
+   "hinglish": "Tareekh jab hua"
+  },
+  "field_amount": {
+   "en": "Amount lost in ₹ (if any)",
+   "hi": "खोई रकम ₹ में (अगर कोई)",
+   "hinglish": "Khoyi rakam ₹ mein (agar koi)"
+  },
+  "field_message": {
+   "en": "Paste the scam message (optional)",
+   "hi": "स्कैम वाला मैसेज चिपकाएँ (वैकल्पिक)",
+   "hinglish": "Scam wala message paste karein (optional)"
+  },
+  "draft_label": {
+   "en": "Your draft (in English, you can edit it)",
+   "hi": "आपका ड्राफ़्ट (अंग्रेज़ी में, आप बदल सकते हैं)",
+   "hinglish": "Aapka draft (English mein, aap badal sakte hain)"
+  },
+  "copy": {
+   "en": "Copy draft",
+   "hi": "ड्राफ़्ट कॉपी करें",
+   "hinglish": "Draft copy karein"
+  },
+  "copied": {
+   "en": "Copied",
+   "hi": "कॉपी हो गया",
+   "hinglish": "Copy ho gaya"
+  },
+  "copy_failed": {
+   "en": "Could not copy. Select the text and copy it yourself.",
+   "hi": "कॉपी नहीं हुआ। टेक्स्ट चुनकर खुद कॉपी करें।",
+   "hinglish": "Copy nahi hua. Text chunkar khud copy karein."
+  },
+  "last_checked": {
+   "en": "Contact details last checked",
+   "hi": "संपर्क जानकारी आखिरी बार जाँची गई",
+   "hinglish": "Contact details aakhri baar check hui"
+  }
+ },
+ "steps": {
+  "call_bank_money": {
+   "en": "Call your bank right now. Use the number on the back of your card or in your passbook, not a number from the message. Ask them to block the card or UPI and to hold or reverse the payment.",
+   "hi": "अभी अपने बैंक को फ़ोन करें। कार्ड के पीछे या पासबुक में लिखा नंबर इस्तेमाल करें, मैसेज वाला नहीं। उनसे कार्ड या UPI ब्लॉक करने और पेमेंट रोकने या वापस करने को कहें।",
+   "hinglish": "Abhi apne bank ko phone karein. Card ke peeche ya passbook mein likha number use karein, message wala nahi. Unse card ya UPI block karne aur payment rokne ya wapas karne ko kahein."
+  },
+  "call_bank_block": {
+   "en": "Call your bank right now. Use the number on the back of your card or in your passbook. Tell them what you shared and ask them to block the card or UPI and watch your account.",
+   "hi": "अभी अपने बैंक को फ़ोन करें। कार्ड के पीछे या पासबुक में लिखा नंबर इस्तेमाल करें। उन्हें बताएँ कि आपने क्या शेयर किया और कार्ड या UPI ब्लॉक करने व खाते पर नज़र रखने को कहें।",
+   "hinglish": "Abhi apne bank ko phone karein. Card ke peeche ya passbook mein likha number use karein. Unhe batayein ki aapne kya share kiya aur card ya UPI block karne aur account par nazar rakhne ko kahein."
+  },
+  "call_1930": {
+   "en": "Call 1930, the national cyber fraud helpline, and report what happened. Report as soon as possible, because early reporting helps.",
+   "hi": "राष्ट्रीय साइबर धोखाधड़ी हेल्पलाइन 1930 पर फ़ोन करके पूरी बात बताएँ। जल्द से जल्द रिपोर्ट करें, क्योंकि जल्दी रिपोर्ट करने से मदद मिलती है।",
+   "hinglish": "National cyber fraud helpline 1930 par phone karke poori baat batayein. Jaldi se jaldi report karein, kyunki jaldi report karne se madad milti hai."
+  },
+  "report_portal": {
+   "en": "Also file a complaint at cybercrime.gov.in and save the complaint number.",
+   "hi": "cybercrime.gov.in पर शिकायत भी दर्ज करें और शिकायत नंबर संभालकर रखें।",
+   "hinglish": "cybercrime.gov.in par complaint bhi darj karein aur complaint number sambhalkar rakhein."
+  },
+  "change_pins": {
+   "en": "Change your UPI PIN and your net-banking and email passwords. Do it from your own phone, then log out of all other devices.",
+   "hi": "अपना UPI PIN और नेट-बैंकिंग व ईमेल के पासवर्ड बदलें। अपने फ़ोन से करें, फिर बाकी सभी डिवाइस से लॉग आउट करें।",
+   "hinglish": "Apna UPI PIN aur net-banking aur email ke password badlein. Apne phone se karein, phir baaki sabhi devices se log out karein."
+  },
+  "airplane_uninstall": {
+   "en": "Switch on airplane mode. Then uninstall the app or file you installed.",
+   "hi": "फ़ोन को एयरप्लेन मोड पर करें। फिर जो ऐप या फ़ाइल इंस्टॉल की थी, उसे हटा दें।",
+   "hinglish": "Phone ko airplane mode par karein. Phir jo app ya file install ki thi, use uninstall karein."
+  },
+  "change_passwords_other_device": {
+   "en": "From a different, trusted device, change the passwords of your bank, email and UPI apps.",
+   "hi": "किसी दूसरे भरोसेमंद डिवाइस से अपने बैंक, ईमेल और UPI ऐप के पासवर्ड बदलें।",
+   "hinglish": "Kisi doosre bharosemand device se apne bank, email aur UPI apps ke password badlein."
+  },
+  "check_statements": {
+   "en": "Check your recent bank and UPI transactions for anything you do not recognise, and tell the bank about each one.",
+   "hi": "अपने हाल के बैंक और UPI लेन-देन देखें। जो पहचान में न आए, उसके बारे में बैंक को बताएँ।",
+   "hinglish": "Apne haal ke bank aur UPI transactions dekhein. Jo pehchaan mein na aaye, uske baare mein bank ko batayein."
+  },
+  "watch_id": {
+   "en": "Keep a note of what ID details you sent. Watch for loans, SIM cards or accounts you did not apply for, and tell your bank if you see any.",
+   "hi": "आपने कौन सी ID की जानकारी भेजी, इसे लिख लें। जो लोन, सिम या खाते आपने नहीं खोले, उन पर नज़र रखें और दिखें तो बैंक को बताएँ।",
+   "hinglish": "Aapne kaun si ID ki details bheji, ise likh lein. Jo loan, SIM ya account aapne nahi khole, un par nazar rakhein aur dikhein to bank ko batayein."
+  },
+  "keep_evidence": {
+   "en": "Keep evidence: take screenshots of the chat, the payment and the phone numbers. Write down the transaction ID. Do not delete the chat.",
+   "hi": "सबूत रखें: चैट, पेमेंट और फ़ोन नंबरों के स्क्रीनशॉट लें। ट्रांज़ैक्शन ID लिख लें। चैट डिलीट न करें।",
+   "hinglish": "Saboot rakhein: chat, payment aur phone numbers ke screenshots lein. Transaction ID likh lein. Chat delete na karein."
+  },
+  "no_recovery": {
+   "en": "Do not send more money to 'recover' the first payment. People who offer to get your money back for a fee are usually scammers too.",
+   "hi": "पहला पेमेंट 'वापस पाने' के लिए और पैसे न भेजें। जो फ़ीस लेकर पैसे वापस दिलाने का वादा करे, वह आमतौर पर ठग ही होता है।",
+   "hinglish": "Pehla payment 'wapas paane' ke liye aur paise na bhejein. Jo fees lekar paise wapas dilane ka wada kare, woh aamtaur par thug hi hota hai."
+  },
+  "tell_someone": {
+   "en": "Tell a family member, a friend or your college. This happens to many people. You are not alone.",
+   "hi": "परिवार के किसी सदस्य, दोस्त या कॉलेज को बताएँ। यह बहुत लोगों के साथ होता है। आप अकेले नहीं हैं।",
+   "hinglish": "Parivaar ke kisi sadasya, dost ya college ko batayein. Yeh bahut logon ke saath hota hai. Aap akele nahi hain."
+  }
+ },
+ "cases": {
+  "paid": {
+   "title": {
+    "en": "I paid money",
+    "hi": "मैंने पैसे भेज दिए",
+    "hinglish": "Maine paise bhej diye"
+   },
+   "steps": [
+    "call_bank_money",
+    "call_1930",
+    "report_portal",
+    "check_statements",
+    "keep_evidence",
+    "no_recovery",
+    "tell_someone"
+   ]
+  },
+  "otp": {
+   "title": {
+    "en": "I shared an OTP or PIN",
+    "hi": "मैंने OTP या PIN बता दिया",
+    "hinglish": "Maine OTP ya PIN bata diya"
+   },
+   "steps": [
+    "call_bank_block",
+    "call_1930",
+    "change_pins",
+    "check_statements",
+    "keep_evidence",
+    "no_recovery",
+    "tell_someone"
+   ]
+  },
+  "link": {
+   "title": {
+    "en": "I clicked a link or installed an app",
+    "hi": "मैंने लिंक खोला या ऐप इंस्टॉल की",
+    "hinglish": "Maine link khola ya app install ki"
+   },
+   "steps": [
+    "airplane_uninstall",
+    "call_bank_block",
+    "change_passwords_other_device",
+    "call_1930",
+    "check_statements",
+    "keep_evidence",
+    "tell_someone"
+   ]
+  },
+  "details": {
+   "title": {
+    "en": "I shared bank or ID details",
+    "hi": "मैंने बैंक या ID की जानकारी दे दी",
+    "hinglish": "Maine bank ya ID ki details de di"
+   },
+   "steps": [
+    "call_bank_block",
+    "call_1930",
+    "check_statements",
+    "watch_id",
+    "keep_evidence",
+    "no_recovery",
+    "tell_someone"
+   ]
+  }
+ }
+}

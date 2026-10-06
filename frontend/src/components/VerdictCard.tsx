@@ -1,4 +1,10 @@
-import type { AnalysisResult, Severity, Verdict } from "../types";
+import type { AnalysisResult, Lang, Severity, Verdict } from "../types";
+
+const CONSEQUENCE_HEADING: Record<Lang, string> = {
+  en: "What could happen if you go ahead",
+  hi: "आगे बढ़ने पर क्या हो सकता है",
+  hinglish: "Aage badhne par kya ho sakta hai",
+};
 
 const VERDICT: Record<Verdict, { label: string; icon: string; sub: string; box: string; badge: string }> = {
   safe: {
@@ -48,6 +54,19 @@ export default function VerdictCard({ result }: { result: AnalysisResult }) {
                 {f.reason}
                 {f.evidence && <code className="mt-1 block break-all rounded bg-stone-100 px-2 py-1 text-xs text-stone-700 dark:bg-stone-800 dark:text-stone-300">{f.evidence}</code>}
               </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {result.consequences && result.consequences.length > 0 && (
+        <div className="rounded-xl border-l-4 border-stone-400 bg-white/80 p-3 dark:border-stone-500 dark:bg-stone-900/70">
+          <h3 className="mb-2 text-sm font-semibold uppercase tracking-wide text-stone-600 dark:text-stone-400">
+            {CONSEQUENCE_HEADING[result.language ?? "en"]}
+          </h3>
+          <ul className="list-disc space-y-1 pl-5 text-sm">
+            {result.consequences.map((c, i) => (
+              <li key={i}>{c}</li>
             ))}
           </ul>
         </div>

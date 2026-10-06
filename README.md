@@ -52,6 +52,36 @@ The free tier sleeps after ~15 minutes idle; the first request then takes up to 
 ### 4. Smoke test
 Open the site on your phone, wait for the banner to clear, paste: `Your SBI account will be blocked. Update KYC at http://sbi-kyc-update.xyz` and expect **High Risk**. Then try a screenshot and a QR code.
 
+## Editing scam knowledge (no code needed)
+
+Everything below is plain JSON. Edit, run the tests, push.
+
+| File | What it holds |
+|---|---|
+| `backend/app/rules/data/phrases.json` | Phrase rules (English, Hinglish, Hindi). Each rule has an `id`, `severity`, `reason` and regex patterns. |
+| `backend/app/rules/data/consequences.json` | Feature 1: what could happen if the user acts, per finding id. |
+| `backend/app/rules/data/playbooks.json` | Feature 2: scam types and how they work. |
+| `frontend/src/data/emergency.json` | Feature 3: emergency steps, phone numbers, URLs, wording. |
+
+### Consequence preview
+Under the reasons, Suspicious and High Risk results show up to 3 lines under **"What could happen if you go ahead"**, most serious first, in the language of the message (English, Hindi or Hinglish). Safe results show nothing. To add one, add the finding id to `consequences` with `severity` (`high` or `medium`) and `en`, `hi`, `hinglish` text. Use careful words ("can", "may", "usually"). If a new rule has no consequence, list its id under `no_consequence`; a test fails until you do one or the other.
+
+### Scam playbook
+When at least `PLAYBOOK_MIN_MATCHES` (2, in `backend/app/rules/playbooks.py`) of a playbook's `finding_ids` fire, the result shows a collapsed card "This looks like: <scam name>" with how it works, what they ask next, and what the real thing looks like. Only the best match is shown. `boost_terms` only break ties between playbooks. Never name a real company or person as the scammer. A new playbook needs a test message in `backend/tests/test_playbooks.py`.
+
+### "I already paid / shared my OTP" help
+A button on the main page opens a calm step-by-step screen: pick what happened, then follow a numbered checklist (English / हिंदी / Hinglish). It is bundled into the frontend, so it opens instantly even while the Render server is asleep. All numbers and links live in `emergency.json`:
+* Only **1930** and **cybercrime.gov.in** are listed. They were checked against Press Information Bureau (Ministry of Home Affairs) material on `last_verified`. Bank numbers are deliberately not listed (they differ by bank): the screen tells the user to use the number on their card or passbook.
+* When you re-check these, update `last_verified`. A test fails if an unexpected phone number appears in the file.
+* The **complaint draft helper** builds its text in the browser only. It does not call the backend, does not use browser storage and does not log. Tests in `backend/tests/test_emergency.py` and `frontend/src/lib/complaint.test.ts` enforce this.
+
+## Tests
+
+```bash
+cd backend && .venv/bin/python -m pytest      # rules, API, consequences, playbooks, emergency data
+cd frontend && npm test                       # complaint draft + no-network guard
+```
+
 ## Optional: model names
 Default models for the AI explanation are in `backend/app/ai/adapters.py` (override with env vars `VIDHUR_MODEL_OPENAI`, `VIDHUR_MODEL_ANTHROPIC`, `VIDHUR_MODEL_GEMINI`, `VIDHUR_MODEL_GROK`). Providers retire models, so if one stops working, change it there or type a model name under "Advanced" in the app's AI settings.
 
